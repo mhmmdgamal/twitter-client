@@ -4,7 +4,7 @@ import { ApolloClientOptions, ApolloLink, InMemoryCache } from '@apollo/client/c
 import { HttpLink } from 'apollo-angular/http';
 import { setContext } from '@apollo/client/link/context';
 
-const uri = 'https://client-twitter-angular.herokuapp.com/graphql';
+const uri = 'https://api-twitter-server.herokuapp.com/graphql';
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
 
   const basic = setContext((operation, context) => ({
