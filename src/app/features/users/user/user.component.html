@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ user?.firstName + ' ' + user?.lastName }}</h5>
+    <h6 class="card-subtitle mb-3 text-muted">@{{ user?.username }}</h6>
+    <div class="row">
+      <p class="col">{{user?.followingsCount}} Following</p>
+      <p class="col">{{user?.followersCount}} Followers</p>
+      <p class="col-8 text-right" *ngIf="!me()">
+        <button *ngIf="isFollowing; else follow" (click)="doUnfollow()" class="btn btn-danger float-right">Unfollow</button>
+        <ng-template #follow>
+          <button (click)="doFollow()" class="btn btn-primary float-right">Follow</button>
+        </ng-template>
+      </p>
+    </div>
+  </div>
+</div>

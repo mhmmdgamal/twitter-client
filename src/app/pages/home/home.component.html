@@ -1,0 +1,11 @@
+<form (ngSubmit)="addTweet()">
+  <div class="form-group">
+    <legend class="lead">Add Tweet</legend>
+    <textarea [(ngModel)]="tweetBody" name="tweetBody" rows="4" class="form-control mb-2"></textarea>
+    <button class="btn btn-primary btn-lg btn-block">Tweet</button>
+  </div>
+</form>
+
+<ng-container *ngFor="let tweet of tweets">
+  <app-tweet [tweet]="tweet"></app-tweet>
+</ng-container>
