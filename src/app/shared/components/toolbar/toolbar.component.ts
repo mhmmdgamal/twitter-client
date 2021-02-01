@@ -14,15 +14,24 @@ export class ToolbarComponent implements OnInit {
   constructor(private readonly authService: AuthService, private readonly router: Router) { }
 
   ngOnInit(): void {
-    let currentUser = localStorage.getItem("currentUser");
-    if (currentUser) {
-      this.authInfo = JSON.parse(currentUser);
-    }
+    // let currentUser = localStorage.getItem("currentUser");
+    // if (currentUser) {
+    //   this.authInfo = JSON.parse(currentUser);
+    // }
   }
 
   logout() {
     this.authService.logout();
     this.router.navigate(['/login'])
+  }
+
+  isAuth() {
+    let currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
+      this.authInfo = JSON.parse(currentUser);
+      return true;
+    }
+    return false;
   }
 }
 

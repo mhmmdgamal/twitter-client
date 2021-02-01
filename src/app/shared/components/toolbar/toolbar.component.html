@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary mb-4">
   <a class="navbar-brand text-light" routerLink='/'>Twitter</a>
   <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-    <ng-container *ngIf="authInfo; else login">
+    <ng-container *ngIf="isAuth(); else login">
         <li class="nav-item">
         <a [routerLink]="['/users/', authInfo.username]" class="nav-link text-light">{{ authInfo.username }}</a>
       </li>
